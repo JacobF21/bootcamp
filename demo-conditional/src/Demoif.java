@@ -1,4 +1,4 @@
-public class App {
+public class Demoif {
     public static void main(String[] args) throws Exception {
         int x = -1;
         int y;
@@ -83,5 +83,57 @@ public class App {
         }
         System.out.println("The grade is " + grade + " " + passOrNot + ".");
 
+        // String
+        String s1 = "hohoho";
+        if (s1.length() > 5) {
+            System.out.println(s1 + " is larger than 5.");
+        }
+
+        // Another approach
+        if (!(s1.length() <= 5)) {
+            System.out.println(s1 + " is larger than 5.");
+        }
+
+        // char (==, >=, <=, >, <, !=)
+        // boolean (==, !=)
+        boolean result3 = x > 10;
+        if (result3 == true) {
+            System.out.println("yes");
+        }
+        if (result3 != false) {
+
+        }
+        if (!(result3 == true)) {
+
+        }
+        // int j can be compare with double value, coz j will be convert ot double
+        int j = 10;
+        if (j > 10.2) {
+
+        }
+        byte testing = 1;
+        short testingShort = 2;
+        if (testing > testingShort) {
+
+        }
+
+        // Strig.charAt() => return char
+        String sampleChar = "abcdefg";
+        String ans = "no";
+        // check if sampleChar start with 'a' and end with 'g', print out "yes", othewise "no"
+        if (sampleChar.charAt(0) == 'a'
+                && sampleChar.charAt(sampleChar.length() - 1) == 'g') {
+            ans = "no";
+        }
+        System.out.println("yes");
+
+        int test1 = 5;
+        double test2 = 7.6;
+        if (test1 >= 3) {
+
+        }
+
+        String example = "testing";
+        System.out.println(example.length());
     }
 }
