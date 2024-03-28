@@ -25,6 +25,23 @@ public class App {
         System.out.println(arr[2]);
         System.out.println(arr[3]);
 
+        String[] stringArr = new String[2];
+        stringArr[0]="Demo";
+        stringArr[1]="Demo2";
+        System.out.println(stringArr[0]);
+        System.out.println(stringArr[1]);
+
+        double[] doubleArr = new double[3];
+        doubleArr[0]=1.5;
+        doubleArr[1]=2.5;
+        doubleArr[2]=3.5;
+        System.out.println(doubleArr[0]);
+        System.out.println(doubleArr[1]);
+        System.out.println(doubleArr[2]);
+
+
+
+
 
     }
 }
