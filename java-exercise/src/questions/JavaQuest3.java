@@ -101,7 +101,32 @@ public class JavaQuest3 {
         break;
     }
     System.out.print(MonthOfName + " " + year + " has " + number_Of_DaysInMonth + " days\n");
+    
+    //if the left condtion pass, the right one will be skipped
+    String lastName = "Lau";
+    int age = 18;
+    int x = 2;
+    if(age ==18 || "Lau".equals(lastName)){
+      
+    }
+
+    if(age ==18 || "Lau".equals(lastName) && x==3){
+
+    } 
+  
+    System.out.println(true && false); // false
+    System.out.println(true && true); // ture
+    System.out.println(false && false); // false
+    System.out.println(false && true); // true
+
+    System.out.println(true || false); // true
+    System.out.println(true || true); // true
+    System.out.println(false || true); // true
+    System.out.println(false || false); // false
+
+    
   }
+
 }
 
 
