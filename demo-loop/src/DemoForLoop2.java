@@ -36,6 +36,8 @@ public class DemoForLoop2 {
     //...*****
     //....***
     //.....*
+    int number = 5;
+
 
     //Searching
     String str2 ="abcdfeg hello world!";
