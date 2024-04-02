@@ -19,28 +19,36 @@ public class JavaQuest8 {
     int secondMax;
     int temp;
     // code here ...
+    //reorder all the value then find the second max
     for(int i=0;i<nums3.length-1;i++){
       for(int j=0;j<nums3.length - i- 1;j++){
         if(nums3[j]>nums3[j+1]){
           temp = nums3[j+1];
-          nums4[j+1] = nums4[j];
-          nums4[j]=temp;
+          nums3[j+1] = nums3[j];
+          nums3[j]=temp;
         }
       }
     }
     secondMax = nums4[nums4.length-2];
-    System.out.println(Arrays.toString(nums4));
-    System.out.println(secondMax);
+    //System.out.println(Arrays.toString(nums4));
+    //System.out.println(secondMax);
 
-    //fist loop to put the max value to the end of string array
-    int temp2;
-    for(int i=0;i<nums.length-1;i++){
-      if(nums[i]>nums[i+1]){
-        temp2 = nums[i+1];
-        nums[i+1] = nums[i];
-        nums[i] = temp2;
+    //Find the max value, then find the second max by comparing the value with max 
+    int secondMax2 = nums3[0];
+    int max2=Integer.MIN_VALUE;
+    for(int i=0;i<nums3.length;i++){
+      if(nums[i]>max2){
+        max2=nums3[i];
       }
-      //System.out.println(Arrays.toString(nums));
     }
+    for(int j=0;j<nums3.length;j++){
+      if(nums3[j]<=max2 && nums3[j]>=secondMax2){
+        secondMax2=nums3[j];
+      }
+      //System.out.println(secondMax2);
+    }  
+    //System.out.println(Arrays.toString(nums));
+    //System.out.println(max2);
+    System.out.println(secondMax2); 
   }
 }

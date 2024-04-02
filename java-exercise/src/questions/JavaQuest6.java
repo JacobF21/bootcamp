@@ -12,11 +12,11 @@ public class JavaQuest6 {
   public static void main(String[] args) {
     // Code here ...
     // for loop to print first 15 numbers in Fibonacci Sequence
-    int[] fs = new int[16];
-    for(int i=0;i<16;i++){
+    int[] fs = new int[15];
+    for(int i=0;i<15;i++){
       if(i<2){
         fs[i]=1;
-        //System.err.println(i);
+        //System.out.println(i);
       }
       else if(i>=2){
         fs[i]=fs[i-1]+fs[i-2];
