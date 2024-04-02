@@ -49,7 +49,7 @@ public class App {
         }
 
         //
-        String Pattern = "cdef";
+        String Pattern = "cd";
         // Print true
         
         for (int i = 0; i <s.length()-Pattern.length() ; i++) {
