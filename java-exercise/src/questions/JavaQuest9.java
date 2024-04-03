@@ -23,12 +23,7 @@ public class JavaQuest9 {
     System.out.println(str.charAt(15));
     // prints e (the 1st e)
     // code here ...
-    for(int i =0;i<str.length();i++){
-      if(str.charAt(i)=='e'){
-        System.out.println(str.charAt(i));
-        break;
-      }
-    }
+    System.out.println(str.charAt(str.indexOf("e")));
 
 
     // Use indexOf()
