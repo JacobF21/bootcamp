@@ -46,7 +46,7 @@ public class printDiamond {
     // 7 8 9 10 11 12
     // 2 3 4 5 6 7
 
-    int n =53;
+    int n =41;
     for (int i = 0; i < n * 2 - 1; i++) {
       String star = "";
       String space = "";

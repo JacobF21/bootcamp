@@ -1,4 +1,4 @@
-public class nestLoop {
+public class PatternSearch {
     public static void main(String[] args) {
         String Pattern = "cd";
         String s = "abcdefg";

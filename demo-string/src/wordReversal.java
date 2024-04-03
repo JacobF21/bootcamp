@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class wordReversal {
     public static void main(String[] args) {
+        //ChatGPT problem
         // Write a Java program that prompts the user to enter a sentence.
         // Use the appropriate string method(s) to split the sentence into individual words.
         // Reverse each word using string manipulation methods.
@@ -61,7 +62,6 @@ public class wordReversal {
             } else{
                 finalAns += arr[i]+" "; 
             }
-
         }
         System.out.println(finalAns);
     }
