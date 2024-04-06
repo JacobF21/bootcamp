@@ -26,6 +26,8 @@ public class JavaQuest10 {
     System.out.print("Input the value: ");
     int newValue = input.nextInt();
 
+    //indexPosition =3;
+    //newValue=120;
     System.out.println("Original Array : " + Arrays.toString(my_array));
 
     // code here ...

@@ -28,7 +28,7 @@ public class App {
         Boolean example14 = true;
 
         if (x2.equals(1)) {
-            // System.out.println("x2=1");
+            // System.out.println("x2=1"); compare opertior in object is diff with primitive value
         }
 
         if (x2 == 1) {
@@ -99,8 +99,10 @@ public class App {
         int i5 =12;
         Long l5 = (long)i5;
 
-        
-
+        //Float.valueOf()
+        Float f2 = Float.valueOf("1.0");
+        //f2.compareTo -> 0,-1,1
+        //f2.equals(.....) -> true, false
 
 
 
