@@ -4,11 +4,11 @@ public class Weapon {
 
   public void chooseWeapon(String name) {
     this.name = name;
-    if (this.name == "Arch") {
+    if (this.name.equals("Arch")) {
       this.damage = 50;
-    } else if (this.name == "MagicWand") {
+    } else if (this.name.equals("MagicWand")) {
       this.damage = 200;
-    } else if (this.name == "Sword") {
+    } else if (this.name.equals("Sword")) {
       this.damage = 100;
     }
   }

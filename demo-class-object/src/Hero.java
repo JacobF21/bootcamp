@@ -17,13 +17,13 @@ public class Hero {
 
   public void chageCharacter(String character) {
     this.character = character;
-    if (this.character == "Hunter") {
+    if (this.character.equals("Hunter")) {
       this.hp = 150;
       this.mp = 50;
-    } else if (this.character == "Magican") {
+    } else if (this.character.equals("Magican")) {
       this.hp = 150;
       this.mp = 200;
-    } else if (this.character == "Warrior") {
+    } else if (this.character.equals("Warrior")) {
       this.hp = 200;
       this.mp = 100;
     }
