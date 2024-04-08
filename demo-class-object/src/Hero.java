@@ -6,6 +6,7 @@ public class Hero {
   private int mp = 100;
   private String character = "Civilian";
   private Weapon weapon = new Weapon();
+  private int damageCount = 0;
 
   // setter
   public void setName() {
@@ -20,7 +21,7 @@ public class Hero {
       this.hp = 150;
       this.mp = 50;
     } else if (this.character == "Magican") {
-      this.hp = 75;
+      this.hp = 150;
       this.mp = 200;
     } else if (this.character == "Warrior") {
       this.hp = 200;
@@ -28,20 +29,37 @@ public class Hero {
     }
   }
 
-  public void chooseWeapon(){
-    if(this.character.equals("Hunter")){
+  public void chooseWeapon() {
+    if (this.character.equals("Hunter")) {
       this.weapon.chooseWeapon("Arch");
-    } else if(this.character.equals("Magican")){
+    } else if (this.character.equals("Magican")) {
       this.weapon.chooseWeapon("MagicWand");
-    } else if(this.character.equals("Warrior")){
+    } else if (this.character.equals("Warrior")) {
       this.weapon.chooseWeapon("Sword");
     }
   }
 
+  public int getWeaponDamage() {
+    return this.weapon.getDamage();
+  }
+
+  public void reduceHp(Weapon weapon) {
+    this.hp -= weapon.getDamage();
+  }
+
+  public void attack(Hero opponent) {
+    opponent.damageCount++;
+    opponent.reduceHp(this.weapon);
+  }
+
+
+
   public String toString() {
     return "Hero Name is:" + this.name 
           + ", character is:" + this.character
-          + ", weapon is:" + this.weapon.getWeaponName();
+          + ", weapon is:" + this.weapon.getWeaponName() 
+          + ", hp remain is:"+ this.hp 
+          + ", damage count is:" + this.damageCount;
   }
 
   public static void main(String[] args) {
@@ -49,7 +67,14 @@ public class Hero {
     hero1.setName();
     hero1.chageCharacter("Warrior");
     hero1.chooseWeapon();
+    Hero hero2 = new Hero();
+    hero2.setName();
+    hero2.chageCharacter("Magican");
+    hero2.chooseWeapon();
     System.out.println(hero1.toString());
+    System.out.println(hero2.toString());
+    hero1.attack(hero2);
+    System.out.println(hero2.toString());
   }
 }
 
