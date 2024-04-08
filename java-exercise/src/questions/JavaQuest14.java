@@ -61,7 +61,7 @@ public class JavaQuest14 {
       num /= 10;
     }
 
-    boolean result = false;
+    boolean result=false;
     for (int i = 0; i < (noOfDigit / 2); i++) {
       // System.out.println(i);
       if (input[i] == input[noOfDigit - i - 1]) {
