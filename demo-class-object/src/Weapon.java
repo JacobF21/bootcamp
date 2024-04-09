@@ -1,6 +1,11 @@
 public class Weapon {
-  private String name = "Unarmed";
-  private int damage = 25;
+  private String name;
+  private int damage;
+
+  public Weapon(){
+    this.name="Unarmed";
+    this.damage=25;
+  };
 
   public void chooseWeapon(String name) {
     this.name = name;

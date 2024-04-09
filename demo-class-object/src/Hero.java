@@ -2,11 +2,21 @@ import java.util.Scanner;
 
 public class Hero {
   private String name;
-  private int hp = 100;
-  private int mp = 100;
-  private String character = "Civilian";
-  private Weapon weapon = new Weapon();
-  private int damageCount = 0;
+  private int hp;
+  private int mp;
+  private String character;
+  private Weapon weapon;
+  private int damageCount;
+
+  public Hero(){
+    this.hp=100;
+    this.mp=100;
+    this.character ="Civilian";
+    this.weapon = new Weapon();
+    this.damageCount=0;
+    //this.name = name;
+  };
+
 
   // setter
   public void setName() {
@@ -39,19 +49,14 @@ public class Hero {
     }
   }
 
-  public int getWeaponDamage() {
-    return this.weapon.getDamage();
-  }
-
   public void reduceHp(Weapon weapon) {
     this.hp -= weapon.getDamage();
   }
 
   public void attack(Hero opponent) {
-    opponent.damageCount++;
     opponent.reduceHp(this.weapon);
+    opponent.damageCount++;
   }
-
 
 
   public String toString() {

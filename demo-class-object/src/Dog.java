@@ -4,6 +4,12 @@ public class Dog {
   private String lastName;
   private int age;
 
+
+  //Empty Constructor
+  public Dog(String firstName){
+    this.firstName = firstName;
+  }
+
   //Setter
   public void setFirstName(String firstName){
     this.firstName=firstName;
@@ -44,7 +50,7 @@ public class Dog {
   }
 
   public static void main(String[] args) {
-    Dog dog =new Dog();
+    Dog dog =new Dog("HEHE");
     dog.setFirstName("John");
     dog.setLastName("Lau");
     dog.setAge(8);
