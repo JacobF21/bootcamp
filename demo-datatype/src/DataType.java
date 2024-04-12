@@ -1,5 +1,3 @@
-package Week1;
-
 public class DataType {
   public static void main(String[] args) {
     // variable
@@ -100,7 +98,7 @@ public class DataType {
     //int public =14;
     byte b8 = 10;
     byte b9 =9;
-    short s9 = b8+b9;
+    //short s9 = b8+b9;
 
 
   }

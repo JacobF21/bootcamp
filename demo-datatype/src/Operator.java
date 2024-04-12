@@ -1,5 +1,3 @@
-package Week1;
-
 public class Operator {
   public static void main(String[] args){
     // increment

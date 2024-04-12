@@ -1,5 +1,6 @@
 package customer;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Order {
@@ -12,6 +13,14 @@ public class Order {
     this.orderNo = orderNo;
     this.items = new Item[0];
   }
+
+  public double total(){
+    BigDecimal total = BigDecimal.valueOf(0.0d);
+    for(int i=0;i<items.length;i++){
+      total = total.add(BigDecimal.valueOf(items[i].subTotal()));
+    }
+    return total.doubleValue();
+    }
 
   public void add(Item item){
     Item[] copyArr = this.items;

@@ -1,7 +1,5 @@
 package datacenter;
 
-import javax.sql.rowset.serial.SerialException;
-
 public class Main {
   public static void main(String[] args) {
     Server pc1 = new Server(16, "Intel", null, 140, "Linux");

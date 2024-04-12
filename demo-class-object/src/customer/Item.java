@@ -43,6 +43,7 @@ public class Item {
     order1.add(item1);
     order1.add(item2);
     System.out.println(order1);
+    System.out.println(order1.total());
 
     Customer c = new Customer("sallychan");
     c.addOrder(order1);
