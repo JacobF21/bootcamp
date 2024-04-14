@@ -20,15 +20,17 @@ public class JavaQuest20 {
   public static boolean rotateString(String s, String goal) {
     // code here ...
     char temp;
+    StringBuilder s1 = new StringBuilder(s);
     for(int i=0;i<s.length();i++){
-      if(s.equals(goal)){
+      System.out.println(s1);
+      if(s1.toString().equals(goal)){
         return true;
       }
-      for(int j = 0;j<s.length()-1;j++){
-        temp =goal.charAt(j);
-        goal.charAt(j+1) = goal.charAt(j+2);
-
-      }
+        temp =s1.charAt(0);
+        s1.append(temp);
+        s1.deleteCharAt(0);
+      
     }
+    return false;
   }
 }
