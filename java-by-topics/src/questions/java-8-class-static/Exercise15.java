@@ -14,11 +14,24 @@ public class Exercise15 {
 
         // Implement a constructor to update static variable counter + 1,
         // and assign to instance variable id
+        public Person(){
+            this.id = ++counter; 
+        }
 
         // Implement instance method getId() to get id
+        public int getId(){
+            return this.id;
+        }
 
         // Implement method getCounter() and setCounter() to access and update the
         // static variable counter
+        public static int getCounter(){
+            return counter;
+        }
+
+        public static void setCounter(int n){
+            counter=n;
+        }
     }
 
     public static void main(String[] args) {

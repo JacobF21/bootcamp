@@ -1,4 +1,3 @@
-
 /**
  * Expected Output:
  * LOW
@@ -17,6 +16,11 @@ enum Level {
     }
 
     // Program a method to print all enum level
+    public static void showValues(){
+        for(Level myVar:Level.values()){
+            System.out.println(myVar.name());
+        }
+    }
     
 }
 
