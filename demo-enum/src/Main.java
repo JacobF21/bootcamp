@@ -17,6 +17,10 @@ public class Main {
     System.out.println(account1.balance(Currency.HKD)); 
     System.out.println(account1.balance(Currency.JPY)); 
     System.out.println(account1.balance(Currency.USD)); 
+    System.out.println(account1.balanceInHKD(Currency.HKD)); 
+    System.out.println(account1.balanceInHKD(Currency.JPY)); 
+    System.out.println(account1.balanceInHKD(Currency.USD)); 
+    System.out.println(account1.totalBalance()); 
 
   }
 

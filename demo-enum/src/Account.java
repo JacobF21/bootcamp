@@ -37,12 +37,30 @@ public class Account {
   // balance
   public double balance(Currency currency) {
     double balance = 0;
-    for (Transaction t : transactions) {
+    for (Transaction t : this.transactions) {
       if (t.currency() == currency) {
         balance += t.amount();
       }
     }
     return balance;
+  }
+
+  public double balanceInHKD(Currency currency) {
+    double balance = 0;
+    for (Transaction t : this.transactions) {
+      if (t.currency() == currency) {
+        balance += t.amount()* currency.getRate();
+      }
+    }
+    return balance;
+  }
+
+  public double totalBalance(){
+    double result=0;
+    for(Currency c:Currency.values()){
+      result+=balanceInHKD(c);
+    }
+    return result;
   }
 
   public String getName(){
