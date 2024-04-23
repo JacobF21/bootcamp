@@ -72,7 +72,7 @@ public class String1 {
     return s;
   }
 
-
+  Integer b;
   public String toString(){
     String s="";
     for(int i =0;i<this.characters.length;i++){

@@ -32,6 +32,9 @@ public abstract class SuperAnimal extends SuperObject{// you cannot create an ob
   //the child class has to implement it.
 
   //4. Automatically inherits abctract method from parent abstract class
+  public final void swim(){
+    System.out.println("Animal is swimming");
+  }
 
   public static void main(String[] args) {
     //SuperAnimal sa = new SuperAnimal();

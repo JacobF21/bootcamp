@@ -41,8 +41,16 @@ public class Student {
   public static void main(String[] args) {
     Student s1= new Student("S1","Vincent",LocalDate.of(2000,10,4));
     Student s2= new Student(s1.getStudentID(),s1.getName(),s1.getDOB());
-    System.out.println(s1==s2);
-    System.out.println(s1.equals(s2));
+    System.out.println(s1==s2); 
+    /* 
+    this code will compare the address of two object, 
+    but s1 and s2 both reflecting the same student vincent. 
+    Thus the purpose of comaparing two object 
+    is to determine both object pointing to the same person in real life.
+    So the belows equals() method is going to determine it by compare the attribute of a object
+    instead their address in the memory; 
+    */
+    System.out.println(s1.equals(s2)); //
       
 
   }

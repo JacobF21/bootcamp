@@ -1,6 +1,6 @@
 package abstracts;
 
-public class SuperCat extends SuperAnimal{
+public final class SuperCat extends SuperAnimal{
   
   private int age;
   public SuperCat(int age, String name){
@@ -27,6 +27,10 @@ public class SuperCat extends SuperAnimal{
       System.out.println("Cat is siting");
   }
 
+
+  //public void swim()
+
+
   public static void main(String[] args) {
     SuperCat sc = new SuperCat(10, "Peter");
     System.out.println(sc.getName());
@@ -35,6 +39,7 @@ public class SuperCat extends SuperAnimal{
     sc.run();
     sc.eat();
     sc.sit();
+    sc.swim();
 
     SuperCat sc2 =sc;
     System.out.println(sc2 == sc);
