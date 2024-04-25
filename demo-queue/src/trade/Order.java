@@ -8,6 +8,7 @@ public class Order {
   private LocalTime timestamp;
   OrderType orderType;
   private String OrderID; // to cancel the order when the order is not filled or partially filled in the order book
+  // Advance OrderType, Market Order, Limit Order....
 
   public Order(double price,int quantity,OrderType orderType){
     this.price=price;

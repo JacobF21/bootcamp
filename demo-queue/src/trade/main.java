@@ -20,9 +20,9 @@ public class main {
     orderBook.ask(1.95,8);
     // orderBook.ask(0.95,8);
     
-    System.out.println(orderBook.getBidQueue());
+    //System.out.println(orderBook.getBidQueue());
     // System.err.println(orderBook.getBidQueue().size());
-    System.out.println(orderBook.getAskQueue());
+    //System.out.println(orderBook.getAskQueue());
     // System.out.println(orderBook.getAskQueue().size());
 
     orderBook.priceMatch();
