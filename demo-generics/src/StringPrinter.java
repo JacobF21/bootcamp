@@ -6,8 +6,18 @@ public class StringPrinter {
     this.data=data;
   }
 
+  public void setData(String s){
+    this.data=s;
+  }
+
   public void print(){
     System.out.println(this.data + "StringPrinter");
+  }
+
+  public String toString(){
+    return "StringPrinter("//
+          +"data="+this.data//
+          +")";
   }
 
   public static void main(String[] args) {

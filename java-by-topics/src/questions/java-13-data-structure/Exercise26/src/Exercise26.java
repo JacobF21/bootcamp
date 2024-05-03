@@ -49,7 +49,7 @@ class Exercise26 {
 
         // Iterate the map using
         // for-each loop
-        // Iterating HashMap through for loop
+        // Iterating HashMap through for loop∏
         for (Map.Entry<Integer, Fruit> set : foodTable.entrySet()) {
             // Printing all elements of a Map
             System.out.println(set.getKey() + " = " + set.getValue()+", price = "+set.getValue().getPrice());
