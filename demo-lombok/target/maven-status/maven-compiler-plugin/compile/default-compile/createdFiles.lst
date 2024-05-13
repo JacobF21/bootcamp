@@ -1,7 +1,9 @@
 com/bootcamp/Student.class
+com/bootcamp/Staff.class
 com/bootcamp/App.class
 com/bootcamp/Order.class
 com/bootcamp/Customer.class
 com/bootcamp/Dog.class
 com/bootcamp/Cat.class
+com/bootcamp/Staff$StaffBuilder.class
 com/bootcamp/main.class
