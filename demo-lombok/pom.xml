@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.bootcamp.demo2403</groupId>
+  <groupId>com.bootcamp</groupId>
   <artifactId>demo-lombok</artifactId>
   <version>2.0-SNAPSHOT</version>
 
@@ -13,11 +13,11 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
+  <!-- Java version is 1.7-->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- You can specify Java Version here-->
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -27,7 +27,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -35,8 +34,8 @@
       <version>1.18.32</version>
       <scope>provided</scope>
     </dependency>
-
   </dependencies>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to

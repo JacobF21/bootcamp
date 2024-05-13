@@ -1,9 +1,8 @@
-package com.bootcamp.demo2403;
+package com.bootcamp;
 
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,10 +10,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
 @Builder
+@ToString
 public class Staff {
-  private String name;
-  private LocalDate joinDate;
+  String id;
+  LocalDate joinDate;
 }
