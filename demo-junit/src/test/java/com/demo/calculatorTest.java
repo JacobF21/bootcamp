@@ -65,9 +65,5 @@ void testSumNotEqual(int expected, int x, int y){
     assertNotEquals(expected, Calculator.sum(x,y));
 }
 
-@Test
-void testIsPalindrome(){
-    assertTrue(StringChecker.isPalindrome("racar"));
-    assertFalse(StringChecker.isPalindrome("raca"));
-}
+
 }

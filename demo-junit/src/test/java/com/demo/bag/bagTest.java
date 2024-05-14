@@ -1,6 +1,7 @@
-package com.demo;
+package com.demo.bag;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
@@ -19,12 +20,14 @@ public class bagTest {
   }
 
   @Test
-  void testBags(){
+  void testNoOfTimeOfWithdrawMoreThanTheBallInTheBag(){
     Bag b2 = new Bag();
-    b2.add(3,Color.BLUE);
-    b2.add(4,Color.WHITE);
-    b2.withdraw();
-    b2.withdraw();
+    assertDoesNotThrow( ()-> {
+      b2.add(3,Color.BLUE);
+      b2.add(4,Color.WHITE);
+      b2.withdraw();
+      b2.withdraw();
+    });
     assertThrows(IllegalStateException.class,()-> b2.withdraw());
     assertEquals(b2.size(), 0);
   }
