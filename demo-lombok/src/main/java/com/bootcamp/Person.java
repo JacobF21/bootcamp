@@ -24,7 +24,7 @@ public class Person {
     System.out.println(p1);
     System.out.println(p2);
 
-    var name = "Vincent";
+    //var name = "Vincent";
     // name = 1;
 
   }
