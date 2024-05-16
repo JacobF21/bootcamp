@@ -5,12 +5,16 @@ import java.util.Map;
 
 public class Bank implements BankInterface{
 	private LinkedHashMap<Long, Account> accounts; // object reference
-	static long number =0L;
+	private static long number;
 
 	public Bank() {
 		// complete the function
 		this.accounts=new LinkedHashMap<Long, Account>();
 	}
+
+	private static synchronized long increment() {
+		return number++;
+}
 
 	public Account getAccount(Long accountNumber) {
 		// complete the function
@@ -24,14 +28,14 @@ public class Bank implements BankInterface{
 
 	public Long openCommercialAccount(Company company, int pin, double startingDeposit) {
 		// complete the function
-		number++;
+		Bank.increment();
 		this.accounts.put(number,new CommercialAccount(company,number,pin,startingDeposit));
 		return number;
 	}
 
 	public Long openConsumerAccount(Person person, int pin, double startingDeposit) {
 		// complete the function
-		number++;
+		Bank.increment();
 		this.accounts.put(number,new ConsumerAccount(person,number,pin,startingDeposit));
 		return number;
 	}
