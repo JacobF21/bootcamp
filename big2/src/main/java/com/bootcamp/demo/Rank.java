@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum Rank {
-  ONE(1),
-  TWO(2),
+  ONE(14),
+  TWO(15),
   THREE(3),
   FOUR(4),
   FIVE(5),

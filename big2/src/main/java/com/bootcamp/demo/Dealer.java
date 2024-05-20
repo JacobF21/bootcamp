@@ -1,10 +1,10 @@
 package com.bootcamp.demo;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Stack;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -12,14 +12,14 @@ public class Dealer {
   private Deck deck;
   private GameStatus gameStatus =GameStatus.START;
   private Stack<Set> pool;
-  private int passCount = 0;
-  private List<Player> playerOrder;
+  private static int passCount = 0;
+  private LinkedList<Player> playerList;
 
   public Dealer(){
     this.deck=new Deck(false);
     this.deck.shuffle();
     this.pool = new Stack<>();
-    this.playerOrder=new LinkedList<>();
+    this.playerList=new LinkedList<>();
   }
 
   public void shuffle(){
@@ -29,30 +29,50 @@ public class Dealer {
   public void distribute(Player player1,Player player2,Player player3,Player player4){
     while(!this.deck.isEmpty()){
       player1.addHand(this.deck.distribute());
+      player1.setId(0);
       player2.addHand(this.deck.distribute());
+      player2.setId(1);
       player3.addHand(this.deck.distribute());
+      player3.setId(2);
       player4.addHand(this.deck.distribute());
+      player4.setId(3);
     }
+    playerList.add(player1);
+    playerList.add(player2);
+    playerList.add(player3);
+    playerList.add(player4);
+  }
+
+  public int determineFirstPlayer(){
+    for(int i=0;i<this.playerList.size();i++){
+      if(this.playerList.get(i).isContainDiamondThree()){
+        return this.playerList.get(i).getId();
+      }
+    }
+    return -1;
   }
 
 
   public boolean addToPool(Set cards){
-    if(passCount ==3 || gameStatus==GameStatus.START){
+    if(passCount ==3 || this.gameStatus==GameStatus.START){
       this.pool.add(cards);
       passCount=0;
-      gameStatus=GameStatus.CONTINUE;
+      this.gameStatus=GameStatus.CONTINUE;
       return true;
-    } else{
-      if(cards.getSize() != pool.peek().getSize() || !(cards.compare(pool.peek()))){
-        return false;
-      }
+    } 
+    if(cards.getSize() != pool.peek().getSize() || !(cards.compare(pool.peek()))){
+      return false;
     }
-    System.out.println(pool);
+    this.pool.add(cards);
     return true;
   }
 
   public void increment(){
     passCount++;
+  }
+
+  public static int getPassCount(){
+    return passCount;
   }
 
 }

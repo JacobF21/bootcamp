@@ -18,7 +18,9 @@ public class Rule {
         } 
         return false;
       } else if(cards.size()==5){
-        return true;
+        if(isStraightFlush(cards) || isFourKind(cards) || isFullHouse(cards) || isFlush(cards) || isStraight(cards)){
+          return true;
+        }
       }
       return false;
     }
@@ -32,7 +34,7 @@ public class Rule {
     if(cards.size() !=5){
       return false;
     }
-    int[] temp = new int[13];
+    int[] temp = new int[16];
     int count = 0;
     for (int i = 1; i < cards.size(); i++) {
       if (cards.get(i).getSuit() != cards.get(0).getSuit()) {
@@ -64,10 +66,10 @@ public class Rule {
     if(cards.size() !=5){
       return false;
     }
-    int[] temp = new int[13];
+    int[] temp = new int[16];
     for (int i = 0; i < cards.size(); i++) {
       // .ordinal()
-      temp[cards.get(i).getRank().getRank() - 1]++;
+      temp[cards.get(i).getRank().getRank()]++;
     }
     // System.out.println(Arrays.toString(temp));
     for (int j = 0; j < temp.length; j++) {
@@ -87,11 +89,11 @@ public class Rule {
     if(cards.size() !=5){
       return false;
     }
-    int[] temp = new int[13];
+    int[] temp = new int[16];
     boolean three = false;
     for (int i = 0; i < cards.size(); i++) {
       // .ordinal()
-      temp[cards.get(i).getRank().getRank() - 1]++;
+      temp[cards.get(i).getRank().getRank()]++;
     }
     // System.out.println(Arrays.toString(temp));
     for (int j = 0; j < temp.length; j++) {
@@ -138,7 +140,7 @@ public class Rule {
       return false;
     }
     
-    int[] temp = new int[13];
+    int[] temp = new int[16];
     int count = 0;
 
     for (int i = 0; i < cards.size(); i++) {

@@ -1,7 +1,11 @@
+com/bootcamp/demo/HandComperator.class
 com/bootcamp/demo/Game.class
+com/bootcamp/demo/Rule.class
 com/bootcamp/demo/Dealer.class
 com/bootcamp/demo/Deck.class
 com/bootcamp/demo/Suit.class
+com/bootcamp/demo/GameStatus.class
 com/bootcamp/demo/Card.class
 com/bootcamp/demo/Player.class
 com/bootcamp/demo/Rank.class
+com/bootcamp/demo/Set.class
