@@ -22,4 +22,16 @@ public class Person extends AccountHolder{
 		return this.lastName;
 	}
 
+	public boolean equals(Object o){
+		if(o==this){
+			return true;
+		} else if(!(o instanceof Person)){
+			return false;
+		}
+		Person person = (Person) o;
+		return person.firstName.equals(this.firstName)
+		&& person.lastName.equals(this.lastName)
+		&& person.getIdNumber()==this.getIdNumber();
+}
+
 }
