@@ -31,8 +31,8 @@ public class Player {
 
   public void addHand(Card card) {
     this.hand.add(card);
-    if(this.hand.size() == 13){
-      Collections.sort(hand,new HandComperator());
+    if (this.hand.size() == 13) {
+      Collections.sort(hand, new HandComperator());
       this.containDiamondThree();
     }
   }
@@ -46,45 +46,47 @@ public class Player {
   }
 
   public void play(Dealer dealer) {
-    this.endTurn=false;
-    while(!this.endTurn){
+    this.endTurn = false;
+    while (!this.endTurn) {
       Scanner scanner = new Scanner(System.in);
       System.out.println(this.getHand());
-      if(!dealer.getPool().isEmpty()){
+      if (!dealer.getPool().isEmpty()) {
         System.out.println(dealer.getPool().peek());
       }
-      System.out.print("PLAYER "+(this.id+1)+":"+" Choose your set:");
+      System.out.print("PLAYER " + (this.id + 1) + ":" + " Choose your set:");
       String input = scanner.nextLine();
-      if(Dealer.getPassCount()==3 && "pass".equals(input.toLowerCase())){
+      if (Dealer.getPassCount() == 3 && "pass".equals(input.toLowerCase())) {
         continue;
-      } else if(isContainDiamondThree() && "pass".equals(input.toLowerCase())){
+      } else if (isContainDiamondThree()
+          && "pass".equals(input.toLowerCase())) {
         continue;
-      } else if("pass".equals(input.toLowerCase())){
+      } else if ("pass".equals(input.toLowerCase())) {
         dealer.increment();
-        this.endTurn=true;
+        this.endTurn = true;
         break;
-      } 
+      }
       Set cards;
-      try{
+      try {
         cards = convertStringToCard(input);
-      } catch(IllegalArgumentException | ArrayIndexOutOfBoundsException e){
+      } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
         continue;
       }
-      if(cards.getSize()==0){
+      if (cards.getSize() == 0) {
         continue;
-      } else{
-        if(dealer.addToPool(cards)){
+      } else {
+        if (dealer.addToPool(cards)) {
           for (Card card : cards.getSet()) {
             this.hand.remove(card);
-            if(this.hand.size() ==0){
+            if (this.hand.size() == 0) {
               dealer.setGameStatus(GameStatus.END);
-              System.out.println("Winner is Player"+(this.getId()+1)+"!!!");
+              System.out
+                  .println("Winner is Player" + (this.getId() + 1) + "!!!");
             }
           }
-          Collections.sort(this.hand,new HandComperator());
-          this.endTurn=true;
-          this.containDiamondThree=false;
-        } else{
+          Collections.sort(this.hand, new HandComperator());
+          this.endTurn = true;
+          this.containDiamondThree = false;
+        } else {
           System.out.println("Your set can not beat the previous player, Please choose again");
           continue;
         }
@@ -98,9 +100,10 @@ public class Player {
     String[] parts = input.split(",");
 
     if (parts.length % 2 != 0) {
-      System.out.println("Invalid input format. Expected '<Suit>,<Rank>,<Suit>,<Rank>...'.");
+      System.out.println(
+          "Invalid input format. Expected '<Suit>,<Rank>,<Suit>,<Rank>...'.");
       // throw new IllegalArgumentException(
-      //     "Invalid input format. Expected '<Suit>,<Rank>,<Suit>,<Rank>...'.");
+      // "Invalid input format. Expected '<Suit>,<Rank>,<Suit>,<Rank>...'.");
     }
 
     for (int i = 0; i < parts.length; i += 2) {
@@ -116,18 +119,18 @@ public class Player {
       if (!(this.hand.contains(new Card(suit, rank)))) {
         System.out.println("Hand did not contain " + suit + " " + rank);
         // throw new IllegalArgumentException(
-        //     "Hand did not contain " + suit + " " + rank);
+        // "Hand did not contain " + suit + " " + rank);
         return set;
       }
       cards.add(new Card(suit, rank));
     }
     set.add(cards);
     set.score();
-      if (!(Rule.isValid(set))) {
-        // throw new IllegalArgumentException("Invalid set");
-        System.out.println("Invalid set");
-        return new Set();
-      }
+    if (!(Rule.isValid(set))) {
+      // throw new IllegalArgumentException("Invalid set");
+      System.out.println("Invalid set");
+      return new Set();
+    }
     return set;
   }
 
